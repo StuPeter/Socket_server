@@ -17,7 +17,7 @@ import sys
 import os
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # 当前目录
-HEAD_STRUCT = '128sIq32s'
+HEAD_STRUCT = '128sIq32'
 BUFFER_SIZE = 1024
 
 

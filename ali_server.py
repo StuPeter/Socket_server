@@ -71,7 +71,7 @@ def deal_data(client_conn, client_addr):
             else:
                 data_size = remained_size
             data_cache = client_conn.recv(data_size)
-            recved_size += data_size
+            recved_size += len(data_cache)  # 实际接收长度和设定的长度可能有出入
             fw.write(data_cache)
             # 显示进度条
             process_bar.show_process()

@@ -39,7 +39,8 @@ def get_file_info(file_path):
 def socket_client(path):
     try:
         tcp_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        server_addr = ('127.0.0.1', 8899)
+        server_addr = ('192.168.1.66', 8899)
+        # server_addr = ('127.0.0.1', 8899)
         tcp_socket.connect(server_addr)
         print("连接服务器，准备上传......")
     except Exception as e:
@@ -73,10 +74,12 @@ def socket_client(path):
                 process_bar.show_process()
             print("%s 文件传输完毕！" % path)
         print('上传成功！连接关闭')
+    else:
+        print("文件不存在，请检查文件路径")
 
 
 def main():
-    path = "d:\\Users\\Administrator\\Downloads\\会声会影X8\\x8-64.exe"
+    path = "F:\\Users\\QQT\\Downloads\\软件包\\office2016_软件安装包.rar"
     socket_client(path)
 
 

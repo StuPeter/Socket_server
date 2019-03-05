@@ -36,10 +36,10 @@ def get_file_info(file_path):
     return file_name, file_name_len, file_size, md5
 
 
-def socket_client(path):
+def socket_client(path, server_addr):
     try:
         tcp_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        server_addr = ('192.168.1.66', 8899)
+        # server_addr = ('192.168.1.66', 8899)
         # server_addr = ('127.0.0.1', 8899)
         tcp_socket.connect(server_addr)
         print("连接服务器，准备上传......")
@@ -79,8 +79,9 @@ def socket_client(path):
 
 
 def main():
-    path = "F:\\Users\\QQT\\Downloads\\软件包\\office2016_软件安装包.rar"
-    socket_client(path)
+    path = "E:\\QuanQTing Files\\Downloads\\会声会影X8\\x8-64.exe"   # 文件路径
+    server_addr = ('106.14.172.95', 8899)   # 服务器地址
+    socket_client(path, server_addr)
 
 
 if __name__ == '__main__':
